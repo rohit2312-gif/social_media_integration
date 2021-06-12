@@ -6,7 +6,7 @@ import 'login_screen.dart';
 import '../Methods/sign_in.dart';
 //User _user;
 class UserDetails extends StatefulWidget {
-  static const us='user';
+  static const user='user';
   String name;
   String email;
   String photourl;

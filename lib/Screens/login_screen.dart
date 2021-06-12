@@ -6,8 +6,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'user_details.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
-import '../Methods/mode;.dart';
-//FacebookLogin facebookLogin=FacebookLogin();
+import '../Methods/model.dart';
+
 import '../Methods/sign_in.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 

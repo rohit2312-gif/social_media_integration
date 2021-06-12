@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_login_facebook/flutter_login_facebook.dart';
 import '../Screens/user_details.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'mode;.dart';
+import 'model.dart';
 
 
 final fb = FacebookLogin();
@@ -47,7 +47,7 @@ final FacebookAccessToken accessToken = res.accessToken;
 final FacebookAuthCredential=FacebookAuthProvider.credential(accessToken.token);
 
 
-var user=await auth.signInWithCredential(FacebookAuthCredential);
+UserCredential user=await auth.signInWithCredential(FacebookAuthCredential);
 
 
 print('Access token: ${accessToken.token}');
@@ -55,13 +55,13 @@ print('Access token: ${accessToken.token}');
 // Get profile data
 final profile = await fb.getUserProfile();
 info.name=await profile.name;
-print('Hello, ${profile.name}! You ID: ${profile.userId}');
+
 
 // Get user profile image url
 final imageUrl = await fb.getProfileImageUrl(width: 100);
 info.photourl=await imageUrl;
 print('Your profile image: $imageUrl');
-print(await fb.isLoggedIn);
+
 
 // Get email (since we request email permission)
 final email = await fb.getUserEmail();

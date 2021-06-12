@@ -15,19 +15,13 @@ class MyApp extends StatelessWidget {
 
         //textTheme: ,
        // backgroundColor: Color(0xffffed99)
-      theme: ThemeData(
 
 
-        textTheme: Theme.of(context).textTheme.apply(
-      displayColor: Colors.black,
-      bodyColor: Colors.black,
-    ),
-      ),
       home: Login(),
       initialRoute: Login.login,
       routes: {
         Login.login:(context)=>Login(),
-        UserDetails.us:(context)=>UserDetails()
+        UserDetails.user:(context)=>UserDetails()
 
     },
 
