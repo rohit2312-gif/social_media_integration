@@ -10,4 +10,6 @@ class Fb_User{
 
 
   Fb_User({this.email,this.name,this.photourl});
+
+
 }

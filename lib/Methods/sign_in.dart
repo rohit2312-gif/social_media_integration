@@ -18,18 +18,25 @@ GoogleSignIn signIn=GoogleSignIn();
 GoogleSignInAccount account;
 
 Future signinwithGoogle()async{
-GoogleSignInAccount account=await signIn.signIn();
-GoogleSignInAuthentication signInAuthentication=await account.authentication;
+  try {
+    GoogleSignInAccount account = await signIn.signIn();
+    GoogleSignInAuthentication signInAuthentication = await account
+        .authentication;
 
 
-AuthCredential authCredential=GoogleAuthProvider.credential(accessToken: signInAuthentication.accessToken,idToken: signInAuthentication.idToken);
+    AuthCredential authCredential = GoogleAuthProvider.credential(
+        accessToken: signInAuthentication.accessToken,
+        idToken: signInAuthentication.idToken);
 
-UserCredential credential=await auth.signInWithCredential(authCredential);
-User user=credential.user;
-info.email=user.email;
-info.name=user.displayName;
-info.photourl=user.photoURL;
-
+    UserCredential credential = await auth.signInWithCredential(authCredential);
+    User user = credential.user;
+    info.email = user.email;
+    info.name = user.displayName;
+    info.photourl = user.photoURL;
+  }
+  catch(e){
+    print(e.toString());
+  }
 
 }
 
